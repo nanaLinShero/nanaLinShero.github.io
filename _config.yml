@@ -1,9 +1,9 @@
 # Site settings
-title: CodeShero
-SEOTitle: 林娜的博客 | Ln Blog
+title: Ln Blog
+SEOTitle: Ln Blog
 header-img: img/home-bg.jpg
 email: huxpro@gmail.com
-description: "关于程序与设计、黑客与画家 | 林娜，Web & Mobile Lover，Software Engineer，UX Designer | 这里是 @Ln林娜 的个人博客，与你一起发现更大的世界。"
+description: "关于前端开发与设计 | 林娜，Web & Mobile Lover，Software Engineer| 这里是 @Ln林娜 的个人博客，与你一起发现更大的世界。"
 keyword: "林娜, Ln林娜, Ln, 林娜的博客, Ln Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
 url: "https://github.com/CodeShero/CodeShero.github.io.git"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
@@ -78,8 +78,8 @@ ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Stay stupid, stay hungry<br>保持愚蠢，保持渴求"
-sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "Doing the things I want to do<br>做我想做的"
+sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

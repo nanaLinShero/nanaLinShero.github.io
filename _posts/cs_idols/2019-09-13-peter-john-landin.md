@@ -29,9 +29,3 @@ He was much influenced by a study of McCarthy's LISP and taught [Tony Hoare](htt
 
 I have just download his old, influential paper "The next 700 programming languages". 
 I am sure it will be an enjoyable read.
-
-
-
-
-
-

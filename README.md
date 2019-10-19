@@ -1,7 +1,7 @@
 Hux Blog
 ========
 
-### [View Live Hux Blog &rarr;](https://huangxuan.me)  
+### [View Live Hux Blog &rarr;](https://codeshero.github.io)  
 
 ![](http://huangxuan.me/img/blog-desktop.jpg)
 
@@ -159,13 +159,13 @@ You can easily customize the blog by modifying `_config.yml`:
 
 ```yml
 # Site settings
-title: Hux Blog             # title of your website
-SEOTitle: Hux Blog          # check out docs for more detail
+title: Ln Blog             # title of your website
+SEOTitle: Ln Blog          # check out docs for more detail
 description: "Cool Blog"    # ...
 
 # SNS settings      
-github_username: huxpro     # modify this account to yours
-weibo_username: huxpro      # the footer woule be auto-updated.
+github_username: CodeShero     # modify this account to yours
+# weibo_username: huxpro      # the footer woule be auto-updated.
 
 # Build settings
 paginate: 10                # nums of posts in one page
@@ -372,7 +372,7 @@ License
 -------
 
 Apache License 2.0.
-Copyright (c) 2015-2020 Huxpro
+Copyright (c) 2015-2020 CodeShero
 
-Hux Blog is derived from [Clean Blog Jekyll Theme (MIT License)](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll/)
+Ln Blog is derived from [Clean Blog Jekyll Theme (MIT License)](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll/)
 Copyright (c) 2013-2016 Blackrock Digital LLC.
