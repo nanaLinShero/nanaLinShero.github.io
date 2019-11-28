@@ -134,7 +134,7 @@ background-position: 100px 50px;        /*这里设置的是px坐标，也可以
 ![效果图](/img/in-post/post-carousel/carousel-7.jpg)
 6. 当这三个人不断重复这种移动，就会对窗户外的你形成轮播效果，css3的关键帧动画就可以实现这种重复不断的移动，不了解的同学可以自行百度，这里就不细说关键帧动画原理了。
 
-**css3关键代码测试：**
+**css3关键代码：**
 
 ```css
 .home{

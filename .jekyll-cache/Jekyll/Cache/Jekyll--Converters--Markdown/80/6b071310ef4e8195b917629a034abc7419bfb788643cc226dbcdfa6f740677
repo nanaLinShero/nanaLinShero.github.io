@@ -1,4 +1,4 @@
-I"LM<blockquote>
+I"3M<blockquote>
   <p>本文首发于我的博客园博客 <a href="https://www.cnblogs.com/CodeShero/p/7265855.html">css3关键帧动画实现轮播效果</a>，转载请保留链接 ;)</p>
 </blockquote>
 
@@ -194,10 +194,10 @@
 <p>效果：
 <img src="/img/in-post/post-carousel/carousel-7.jpg" alt="效果图" /></p>
 <ol>
-  <li>当这三个人不断重复这种移动，就会对窗户外的你形成轮播效果，css3的关键帧动画就可以实现这种重复不断的移动，不了解的同学可以自行百度，这里就不细说关键帧动画原理了。
-    <h2 id="css3关键代码测试">css3关键代码测试：</h2>
-  </li>
+  <li>当这三个人不断重复这种移动，就会对窗户外的你形成轮播效果，css3的关键帧动画就可以实现这种重复不断的移动，不了解的同学可以自行百度，这里就不细说关键帧动画原理了。</li>
 </ol>
+
+<p><strong>css3关键代码：</strong></p>
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
