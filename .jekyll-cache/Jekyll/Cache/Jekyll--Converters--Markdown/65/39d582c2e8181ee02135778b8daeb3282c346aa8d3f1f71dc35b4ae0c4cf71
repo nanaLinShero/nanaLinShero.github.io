@@ -1,27 +1,52 @@
-I"�=<blockquote>
+I"[@<hr />
+<p>layout:     post
+title:      “「译」React vs Angular 2：冰与火之歌”
+subtitle:   “React versus Angular 2: There Will Be Blood”
+date:       2016-02-01 12:00:00
+author:     “Hux”
+header-img: “img/post-bg-re-vs-ng2.jpg”
+header-mask: 0.3
+catalog:    true
+tags:</p>
+<ul>
+  <li>Web</li>
+  <li>JavaScript</li>
+  <li>
+    <h2 id="译">译</h2>
+  </li>
+</ul>
+
+<blockquote>
   <p>本文首发于我的博客园博客 <a href="https://www.cnblogs.com/CodeShero/p/7238815.html">三重循环实现四位的吸血鬼数</a>，转载请保留链接 ;)</p>
 </blockquote>
 
 <h2 id="什么是吸血鬼数">什么是吸血鬼数？</h2>
 <p>吸血鬼数字是指位数为偶数的数字，可以由一对数字相乘而得，而这对数字各包含乘积的一半位数的数字，其中从最初的数字中抽取的数字可以任意排序。以两个0结尾的数字是不允许的。<br />
 例如下列的数字都是”吸血鬼”数字：</p>
-<blockquote>
-  <p>1260=21*60
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>1260=21*60
 1827=21*87
-2187=27*81</p>
-  <h2 id="实现思路">实现思路</h2>
-  <p>将四位数按位拆分为四个数字，由这四个数字组合成两个两位数，判断这两个数的乘积是否等于原四位数。</p>
-  <h2 id="数学的组合逻辑">数学的组合逻辑</h2>
-  <p>1.两个数字之间是无序的，即21*60和60*21是等价的
-2.十位和个位的数字是有序的，即12和21是不同的</p>
-  <h2 id="如何循环">如何循环？</h2>
-  <ul>
-    <li>外循环：固定一个数字作为十位数，其余三个数字循环作为个位数</li>
-    <li>内循环：以剩下的三个数循环，排除已被选中的数，再计算出两个数的乘积；将第一个数的个位和十位转换位置再计算判断
-      <h2 id="伪代码提供思路">伪代码—提供思路</h2>
-    </li>
-  </ul>
-</blockquote>
+2187=27*81
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="实现思路">实现思路</h2>
+<p>将四位数按位拆分为四个数字，由这四个数字组合成两个两位数，判断这两个数的乘积是否等于原四位数。</p>
+<h2 id="数学的组合逻辑">数学的组合逻辑</h2>
+<ol>
+  <li>两个数字之间是无序的，即21*60和60*21是等价的</li>
+  <li>十位和个位的数字是有序的，即12和21是不同的</li>
+</ol>
+
+<h2 id="如何循环">如何循环？</h2>
+<ul>
+  <li>外循环：固定一个数字作为十位数，其余三个数字循环作为个位数</li>
+  <li>内循环：以剩下的三个数循环，排除已被选中的数，再计算出两个数的乘积；将第一个数的个位和十位转换位置再计算判断</li>
+</ul>
+
+<h2 id="伪代码提供思路">伪代码—提供思路</h2>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
