@@ -170,5 +170,3 @@ const str = 'a' + 'b' + test
 // good
 const str = `ab${test}`
 ```
-
-
