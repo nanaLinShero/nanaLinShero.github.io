@@ -3,9 +3,11 @@ title: "三重循环实现四位的吸血鬼数"
 subtitle: "对三重循环的理解与掌握"
 layout: post
 author: "Lin.na"
-header-style: text
+header-img: "img/post-bg-re-vs-ng2.jpg"
+header-mask: 0.3
+catalog:    true
 tags:
-  - java
+  - Java
 ---
 
 > 本文首发于我的博客园博客 [三重循环实现四位的吸血鬼数](https://www.cnblogs.com/CodeShero/p/7238815.html)，转载请保留链接 ;)
