@@ -1,9 +1,9 @@
 Hux Blog
 ========
 
-### [View Live Hux Blog &rarr;](https://codeshero.github.io)  
+### [博客传送门&rarr;](https://nanalinshero.github.io)  
 
-![](http://huangxuan.me/img/blog-desktop.jpg)
+![](https://raw.githubusercontent.com/nanaLinShero/nanaLinShero.github.io/master/img/post-bg-2015.jpg)
 
 
 Boilerplate (beta)
@@ -372,7 +372,7 @@ License
 -------
 
 Apache License 2.0.
-Copyright (c) 2015-2020 CodeShero
+Copyright (c) 2015-2020 nanaLinShero
 
-Ln Blog is derived from [Clean Blog Jekyll Theme (MIT License)](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll/)
+nanaLinShero Blog is derived from [Clean Blog Jekyll Theme (MIT License)](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll/)
 Copyright (c) 2013-2016 Blackrock Digital LLC.

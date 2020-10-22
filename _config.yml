@@ -1,11 +1,11 @@
 # Site settings
-title: Ln Blog
-SEOTitle: Ln Blog
+title: nanaLin Blog
+SEOTitle: nanaLin Blog
 header-img: img/home-bg.jpg
 email: huxpro@gmail.com
 description: "关于前端开发与设计 | 林娜，Web & Mobile Lover，Software Engineer| 这里是 @Ln林娜 的个人博客，与你一起发现更大的世界。"
-keyword: "林娜, Ln林娜, Ln, 林娜的博客, Ln Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
-url: "https://github.com/CodeShero/CodeShero.github.io.git"              # your host, for absolute URL
+keyword: "林娜, Ln林娜, Ln, 林娜的博客, nanaLin Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
+url: "https://github.com/nanaLinShero/nanaLinShero.github.io.git"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -15,7 +15,7 @@ future: true
 RSS: false
 # weibo_username:     null
 # zhihu_username:     null
-github_username:    CodeShero
+github_username:    nanaLinShero
 # twitter_username:   null
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
@@ -78,7 +78,7 @@ ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Doing the things I want to do<br>做我想做的"
+sidebar-about-description: "Doing the things I want to do"
 sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -102,36 +102,8 @@ page-mathjax: false
 
 # Friends
 friends: [
-    {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-        title: "CodeShero",
-        href: "https://www.cnblogs.com/CodeShero/"
-    },
-    # {
-    #     title: "Sherry Wu",
-    #     href: "https://xuechundesign.github.io"
-    # },{
-    #     title: "Luke 的自留地",
-    #     href: "http://hmqk1995.github.io"
-    # },{
-    #     title: "Ebn's Blog",
-    #     href: "http://ebnbin.com/"
-    # },{
-    #     title: "SmdCn's Blog",
-    #     href: "http://blog.smdcn.net"
-    # },{
-    #     title: "JiyinYiyong",
-    #     href: "http://tiye.me/"
-    # },{
-    #     title: "David's Game",
-    #     href: "https://www.ruoyaowu.com/"
-    # },{
-    #     title: "DHong Say",
-    #     href: "http://dhong.co"
-    # },{
-    #     title: "尹峰以为",
-    #     href: "http://ingf.github.io/"
-    # }
+  {
+    title: "qianyuEric",
+    href: "https://github.com/qianyuEric/qianyuEric.github.io"
+  },
 ]
