@@ -24,7 +24,7 @@
         bottom: 1px;
     }
     display: block;
-    overflow: auto;
+    // overflow: auto;
     height: 100%;
     padding-bottom: 40px;
     width: 195px;
@@ -32,10 +32,13 @@
         position: relative;
         list-style: none;
         height: auto;
-        overflow: hidden;
+        // overflow: hidden;
         padding-left: 0px;
         padding-right: 5px;
         text-indent: 0;
+        ul {
+            padding-left: 10px;
+        }
         li{
             position: relative;
             list-style: none;
@@ -70,6 +73,26 @@
             }
             border-radius: 4px;
             background-color: #F5F5F5;
+        }
+        .p_nav {
+            .icon {
+                cursor: pointer;
+                &::before {
+                    content: "-";
+                    position: absolute;
+                    left: -2px;
+                    line-height: 30px;
+                }
+                &.fold{
+                    &::before{
+                        content: "+";
+                    }
+                    ~ul {
+                        display: none;
+                    }
+                }
+            }
+            
         }
     }
 }

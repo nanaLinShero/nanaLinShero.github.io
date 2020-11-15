@@ -1,0 +1,13 @@
+I"�<h2 id="html规范">HTML规范</h2>
+<p>HTML遵循浏览器解析正确，可读性强，便于维护的原则</p>
+<h3 id="代码规范">代码规范</h3>
+<h4 id="元素及标签闭合">元素及标签闭合</h4>
+<p>HTML元素共有以下5种：</p>
+<ul>
+  <li>空元素：area、base、br、col、command、embed、hr、img、input、keygen、link、meta、param、source、track、wbr。</li>
+  <li>原始文本元素：script、style。</li>
+  <li>RCDATA元素：textarea、title。</li>
+  <li>外来元素：来自MathML命名空间和SVG命名空间的元素。</li>
+  <li>常规元素：其他HTML允许的元素都称为常规元素。</li>
+</ul>
+:ET

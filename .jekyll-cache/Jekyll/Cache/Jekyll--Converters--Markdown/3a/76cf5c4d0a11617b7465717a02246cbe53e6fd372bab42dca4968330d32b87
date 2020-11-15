@@ -1,0 +1,178 @@
+I"e(<h2 id="html规范">HTML规范</h2>
+<p>HTML遵循浏览器解析正确，可读性强，便于维护的原则</p>
+<h3 id="代码规范">代码规范</h3>
+<h4 id="元素及标签闭合">元素及标签闭合</h4>
+<p>HTML元素共有以下5种：</p>
+<ul>
+  <li>空元素：area、base、br、col、command、embed、hr、img、input、keygen、link、meta、param、source、track、wbr。</li>
+  <li>原始文本元素：script、style。</li>
+  <li>RCDATA元素：textarea、title。</li>
+  <li>外来元素：来自MathML命名空间和SVG命名空间的元素。</li>
+  <li>常规元素：其他HTML允许的元素都称为常规元素。</li>
+</ul>
+
+<p>五类元素的区别如下：</p>
+<ol>
+  <li>空元素，不能容纳任何内容（因为它们没有闭合标签，没有内容能够放在开始标签和闭合标签中间）。</li>
+  <li>原始文本元素，可以容纳文本。</li>
+  <li>RCDATA元素，可以容纳文本和字符引用。</li>
+  <li>外部元素，可以容纳文本、字符引用、CDATA段、其他元素和注释。</li>
+  <li>基本元素，可以容纳文本、字符引用、其他元素和注释。</li>
+</ol>
+
+<p>元素标签的闭合应遵循以下原则：</p>
+<ul>
+  <li>原始文本元素、RCDATA元素以及常规元素都有一个开始标签来表示开始，一个结束标签来表示结束。</li>
+  <li>某些元素的开始和结束标签是可以省略的，如果规定标签不能被省略，那么就绝对不能省略它。</li>
+  <li>空元素只有一个开始标签，且不能为空元素设置结束标签。</li>
+  <li>外来元素可以有一个开始标签和配对的结束标签，或者只有一个自闭合的开始标签，且后者情况下该元素不能有结束标签。</li>
+</ul>
+
+<p>为了能让浏览器更好的解析代码以及能让代码具有更好的可读性，有如下约定：</p>
+<ul>
+  <li>所有具有开始标签和结束标签的元素都要写上起止标签，某些允许省略开始标签或和束标签的元素亦都要写上。</li>
+  <li>空元素标签都不加 “/” 字符。</li>
+</ul>
+
+<p>推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>我是h1标题<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>我是一段文字，我有始有终，浏览器能正确解析<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+	
+<span class="nt">&lt;br&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>不推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>我是h1标题<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>我是一段文字，我有始无终，浏览器亦能正确解析
+<span class="nt">&lt;/div&gt;</span>
+	
+<span class="nt">&lt;br/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="书写风格">书写风格</h4>
+<h5 id="html代码大小写">HTML代码大小写</h5>
+<p>HTML标签名、类名、标签属性和大部分属性值统一用小写，自定义组件用中划线”-“分割。
+推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"demo"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;nav-bar</span> <span class="na">nav-data=</span><span class="s">"data"</span><span class="nt">&gt;&lt;/nav-bar&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>不推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"DEMO"</span><span class="nt">&gt;&lt;/div&gt;</span>
+	
+<span class="nt">&lt;DIV</span> <span class="na">CLASS=</span><span class="s">"DEMO"</span><span class="nt">&gt;&lt;/DIV&gt;</span>
+
+<span class="nt">&lt;navBar</span> <span class="na">navData=</span><span class="s">"data"</span><span class="nt">&gt;&lt;/navBar&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>HTML文本、CDATA、JavaScript、meta标签某些属性等内容可大小写混合。</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="c">&lt;!-- 优先使用 IE 最新版本和 Chrome Frame --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge,chrome=1"</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- HTML文本内容 --&gt;</span>
+<span class="nt">&lt;h1&gt;</span>I AM WHAT I AM <span class="nt">&lt;/h1&gt;</span>
+
+<span class="c">&lt;!-- JavaScript 内容 --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+	<span class="kd">var</span> <span class="nx">demoName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">demoName</span><span class="dl">'</span><span class="p">;</span>
+	<span class="p">...</span>
+<span class="nt">&lt;/script&gt;</span>
+	
+<span class="c">&lt;!-- CDATA 内容 --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span><span class="o">&lt;!</span><span class="p">[</span><span class="nx">CDATA</span><span class="p">[</span>
+<span class="p">...</span>
+<span class="p">]]</span><span class="o">&gt;</span><span class="nt">&lt;/script&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h5 id="元素属性">元素属性</h5>
+<p>元素属性值使用双引号语法。</p>
+<h5 id="特殊字符引用">特殊字符引用</h5>
+<p>在 HTML 中不能使用小于号 “&lt;” 和大于号 “&gt;”特殊字符，浏览器会将它们作为标签解析，若要正确显示，在 HTML 源代码中使用字符实体。<br />
+推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>more<span class="ni">&amp;gt;&amp;gt;</span><span class="nt">&lt;/a&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>不推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>more&gt;&gt;<span class="nt">&lt;/a&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h5 id="代码缩进">代码缩进</h5>
+<p>统一使用四个空格进行代码缩进，使得各编辑器表现一致（各编辑器有相关配置）。</p>
+<h5 id="代码嵌套">代码嵌套</h5>
+<p>元素嵌套规范，每个块状元素独立一行，内联元素可选。<br />
+推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>	
+<span class="nt">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>不推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>	
+<span class="nt">&lt;p&gt;</span> 
+    <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>段落元素与标题元素只能嵌套内联元素。<br />
+推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;h1&gt;&lt;span&gt;&lt;/span&gt;&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>不推荐：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;h1&gt;&lt;div&gt;&lt;/div&gt;&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/p&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

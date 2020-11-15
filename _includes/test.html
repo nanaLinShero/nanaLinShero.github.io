@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let elements = [
+            {
+                name: 'h1'
+            },
+            {
+                name: 'h1'
+            },
+            {
+                name: 'h2'
+            },
+            {
+                name: 'h2'
+            },
+            {
+                name: 'h3'
+            },
+            {
+                name: 'h3'
+            },
+            {
+                name: 'h4'
+            },
+            {
+                name: 'h2'
+            },
+            {
+                name: 'h3'
+            },
+            {
+                name: 'h1'
+            },
+        ]
+        let groups = mapArr(elements)
+        console.log(groups)
+        function mapArr(arr) {
+            arr = Array.from(arr);
+            return arr.reduce((pre, cur, index) => {
+                if(index) {
+                    let prevItem = arr[index - 1], pName = prevItem.name, cName = cur.name;
+                    if(pName === cName) {
+                        if(prevItem.hasOwnProperty('parentIndex')) {
+                            let pIndex = prevItem.parentIndex;
+                            cur.parentIndex = pIndex;
+                            arr[pIndex].hasOwnProperty('child') ? arr[pIndex].child.push(cur) : (arr[pIndex].child = [cur]);
+                        } else {
+                            cur.id = pre.length;
+                            pre.push(cur);
+                        }
+                    } else if(Number(pName[1]) < Number(cName[1])) {
+                        cur.parentIndex = index - 1;
+                        prevItem.child = [cur];
+                    } else {
+                        let item = arr.find(i => i.name === cur.name);
+                        if(item.hasOwnProperty('parentIndex')) {
+                            arr[item.parentIndex].child.push(cur);
+                        } else {
+                            pre.push(cur);
+                        }
+                    }
+                } else {
+                    pre.push(cur);
+                }
+                return pre;
+            }, [])
+        }
+        function getName(el) {
+            return el.prop('tagName').toLowerCase();
+        }
+    </script>
+</body>
+</html>

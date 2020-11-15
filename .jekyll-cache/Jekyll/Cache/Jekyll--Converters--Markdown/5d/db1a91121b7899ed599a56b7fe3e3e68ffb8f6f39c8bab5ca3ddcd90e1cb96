@@ -1,0 +1,75 @@
+I"�<blockquote>
+  <p>“jekyll 是一款简单的博客系统，静态网站生成器。”</p>
+</blockquote>
+
+<h1 id="概述">概述</h1>
+<p><a href="https://www.jekyll.com.cn">jekyll</a>是一款无需数据库、评论功能或频繁的版本更新—只需关注你的内容；<br />
+只用 Markdown、Liquid、HTML &amp; CSS g就可以构建可部署的静态网站；<br />
+原生支持自定义链接、分类、静态页、文章以及自定义布局。</p>
+<h1 id="环境">环境</h1>
+<p>macOS：版本10.15.5</p>
+<h1 id="安装homebrew">安装Homebrew</h1>
+<p>mac通过Homebrew，可以快速安装软件包。</p>
+<h2 id="科学上网">科学上网</h2>
+<p>可以通过科学上网，使用命令行安装Homebrew：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="清华源">清华源</h2>
+<p>使用清华大学镜像源<a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">下载</a></p>
+<h2 id="homebrewcn">HomebrewCN</h2>
+<p><a href="https://gitee.com/cunkai/HomebrewCN">国内自动安装脚本</a></p>
+
+<h1 id="安装ruby">安装ruby</h1>
+<p>Homebrew安装完成之后，使用它来安装最新版本的ruby，代码如下:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew install ruby
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>输入以下命令查看ruby版本：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>ruby --version
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="安装jkeyll">安装jkeyll</h1>
+<p>安装最新版本的jekyll，命令如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo gem install jekyll
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>因为我们将会使用Markdown语言作为标记语言，所以还需要安装kramdown，命令如下：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo gem install kramdown
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h1 id="运行博客">运行博客</h1>
+<p>在自己的博客系统下运行以下命令，就可以在本地启动博客</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>jekyll server
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>启动后显示如下信息：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>Server address: http://127.0.0.1:4000/
+Server running... press ctrl-c to stop.
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>说明程序已经成功启动，在浏览器中输入以下地址，就可以查看自己的博客了。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>localhost:4000
+或
+http://127.0.0.1:4000/
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

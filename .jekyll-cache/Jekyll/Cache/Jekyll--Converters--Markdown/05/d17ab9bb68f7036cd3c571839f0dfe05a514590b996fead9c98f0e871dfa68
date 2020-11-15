@@ -1,4 +1,4 @@
-I"-M<blockquote>
+I"�M<blockquote>
   <p>本文首发于我的博客园博客 <a href="https://www.cnblogs.com/CodeShero/p/7265855.html">css3关键帧动画实现轮播效果</a>，转载请保留链接 ;)</p>
 </blockquote>
 
@@ -61,8 +61,8 @@
 
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
-</pre></td><td class="rouge-code"><pre><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(../</span><span class="nt">img</span><span class="o">/</span><span class="err">放大镜</span><span class="nc">.png</span><span class="o">);</span>
-<span class="nt">background-size</span><span class="o">:</span> <span class="nt">20px</span> <span class="nt">30px</span><span class="o">;</span>
+</pre></td><td class="rouge-code"><pre><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(../</span><span class="nt">img</span><span class="o">/</span><span class="nt">放大镜</span><span class="nc">.png</span><span class="o">);</span>
+<span class="nt">background-size</span><span class="o">:</span> <span class="err">20</span><span class="nt">px</span> <span class="err">30</span><span class="nt">px</span><span class="o">;</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>效果：
@@ -74,8 +74,8 @@
 <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(../</span><span class="nt">img</span><span class="o">/</span><span class="err">放大镜</span><span class="nc">.png</span><span class="o">);</span>
-<span class="nt">background-size</span><span class="o">:</span> <span class="nt">20px</span> <span class="nt">30px</span><span class="o">;</span>
+</pre></td><td class="rouge-code"><pre><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(../</span><span class="nt">img</span><span class="o">/</span><span class="nt">放大镜</span><span class="nc">.png</span><span class="o">);</span>
+<span class="nt">background-size</span><span class="o">:</span> <span class="err">20</span><span class="nt">px</span> <span class="err">30</span><span class="nt">px</span><span class="o">;</span>
 <span class="nt">background-repeat</span><span class="o">:</span> <span class="nt">no-repeat</span><span class="o">;</span>        <span class="c">/*禁止图片重复*/</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -89,10 +89,10 @@
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(../</span><span class="nt">img</span><span class="o">/</span><span class="err">放大镜</span><span class="nc">.png</span><span class="o">);</span>
-<span class="nt">background-size</span><span class="o">:</span> <span class="nt">20px</span> <span class="nt">30px</span><span class="o">;</span>
+</pre></td><td class="rouge-code"><pre><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(../</span><span class="nt">img</span><span class="o">/</span><span class="nt">放大镜</span><span class="nc">.png</span><span class="o">);</span>
+<span class="nt">background-size</span><span class="o">:</span> <span class="err">20</span><span class="nt">px</span> <span class="err">30</span><span class="nt">px</span><span class="o">;</span>
 <span class="nt">background-repeat</span><span class="o">:</span> <span class="nt">no-repeat</span><span class="o">;</span>        <span class="c">/*禁止图片重复*/</span>
-<span class="nt">background-position</span><span class="o">:</span> <span class="nt">100px</span> <span class="nt">50px</span><span class="o">;</span>        <span class="c">/*这里设置的是px坐标，也可以用left或者百分比的形式设置图片位置*/</span>
+<span class="nt">background-position</span><span class="o">:</span> <span class="err">100</span><span class="nt">px</span> <span class="err">50</span><span class="nt">px</span><span class="o">;</span>        <span class="c">/*这里设置的是px坐标，也可以用left或者百分比的形式设置图片位置*/</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>效果：
@@ -251,31 +251,31 @@
     <span class="c">/*调用kbg关键帧动画,动画时长为9s，匀速运动，无限循环播放(除非页面被关闭)*/</span>
 <span class="p">}</span>
 <span class="k">@keyframes</span> <span class="n">kbg</span><span class="p">{</span>
-    <span class="nt">0</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">0</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">,</span><span class="m">320px</span> <span class="m">0</span><span class="p">,</span><span class="m">640px</span> <span class="m">0</span><span class="p">,</span><span class="m">960px</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nt">5</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">5</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">0</span> <span class="m">0</span><span class="p">,</span><span class="m">320px</span> <span class="m">0</span><span class="p">,</span><span class="m">640px</span> <span class="m">0</span><span class="p">,</span><span class="m">960px</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nt">30</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">30</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">-320px</span> <span class="m">0</span><span class="p">,</span><span class="m">0</span> <span class="m">0</span><span class="p">,</span><span class="m">320px</span> <span class="m">0</span><span class="p">,</span><span class="m">640px</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nt">40</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">40</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">-320px</span> <span class="m">0</span><span class="p">,</span><span class="m">0</span> <span class="m">0</span><span class="p">,</span><span class="m">320px</span> <span class="m">0</span><span class="p">,</span><span class="m">640px</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nt">60</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">60</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">-640px</span> <span class="m">0</span><span class="p">,</span><span class="m">-320px</span> <span class="m">0</span><span class="p">,</span><span class="m">0</span> <span class="m">0</span><span class="p">,</span><span class="m">320px</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nt">70</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">70</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">-640px</span> <span class="m">0</span><span class="p">,</span><span class="m">-320px</span> <span class="m">0</span><span class="p">,</span><span class="m">0</span> <span class="m">0</span><span class="p">,</span><span class="m">320px</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="nt">95</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">95</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">-960px</span> <span class="m">0</span><span class="p">,</span><span class="m">-640px</span> <span class="m">0</span><span class="p">,</span><span class="m">-320px</span> <span class="m">0</span><span class="p">,</span><span class="m">0</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nt">100</span><span class="o">%</span><span class="p">{</span>
+    <span class="err">100</span><span class="o">%</span><span class="p">{</span>
         <span class="nl">background-position</span><span class="p">:</span> <span class="m">-960px</span> <span class="m">0</span><span class="p">,</span><span class="m">-640px</span> <span class="m">0</span><span class="p">,</span><span class="m">-320px</span> <span class="m">0</span><span class="p">,</span><span class="m">0</span> <span class="m">0</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>

@@ -1,0 +1,20 @@
+I"#<h2 id="javascript规范">JavaScript规范</h2>
+<p>js规范采用ES6，由于兼容浏览器版本问题–谷歌最低v52，尽量避免使用过高版本的ES规范并且做好向下兼容，遵循最大限度的可复用，可读性强，便于维护的原则。</p>
+<h3 id="语言规范">语言规范</h3>
+<h4 id="变量声明-tsap">变量声明-tsap</h4>
+<p>const 和 let 都是块级作用域，var 是函数级作用域，变量声明必须加上关键字<br />
+使用规范：</p>
+<ul>
+  <li>声明变量使用const和let，不推荐使用var，避免变量提升等问题，更规范更安全</li>
+  <li>常量声明，使用const</li>
+  <li>变量声明，使用let</li>
+  <li>将所有的 const 和 let 分组
+``` javascript
+// 不推荐
+let a;
+const max;
+let c;
+const min;
+let e;</li>
+</ul>
+:ET

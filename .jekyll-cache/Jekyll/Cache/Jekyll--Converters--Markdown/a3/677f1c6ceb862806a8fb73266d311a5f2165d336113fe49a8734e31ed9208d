@@ -1,4 +1,4 @@
-I"�><blockquote>
+I"A?<blockquote>
   <p>本文首发于我的博客园博客 <a href="https://www.cnblogs.com/CodeShero/p/7238815.html">三重循环实现四位的吸血鬼数</a>，转载请保留链接 ;)</p>
 </blockquote>
 
@@ -6,7 +6,7 @@
 <p>吸血鬼数字是指位数为偶数的数字，可以由一对数字相乘而得，而这对数字各包含乘积的一半位数的数字，其中从最初的数字中抽取的数字可以任意排序。以两个0结尾的数字是不允许的。<br />
 例如下列的数字都是”吸血鬼”数字：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td><td class="rouge-code"><pre>1260=21*60
@@ -50,21 +50,21 @@
 18
 19
 20
-</pre></td><td class="rouge-code"><pre><span class="k">for</span><span class="o">(</span><span class="n">i</span><span class="err">从</span><span class="mi">1000</span><span class="err">循环到</span><span class="mi">9999</span><span class="err">取四位数</span><span class="o">){</span>
-<span class="err">　　取这个四位数的个、十、百、千位上的数字存放到数组</span><span class="n">a</span><span class="err">；</span>
-<span class="err">　　</span><span class="k">if</span><span class="o">(</span><span class="err">个位和十位的数字都为</span><span class="mi">0</span><span class="o">){</span>
-<span class="err">　　　　停止执行当前迭代，退回到循环起始处，开始下一次循环；</span>
+</pre></td><td class="rouge-code"><pre><span class="k">for</span><span class="o">(</span><span class="n">i从1000循环到9999取四位数</span><span class="o">){</span>
+<span class="err">　　</span><span class="n">取这个四位数的个</span><span class="err">、</span><span class="n">十</span><span class="err">、</span><span class="n">百</span><span class="err">、</span><span class="n">千位上的数字存放到数组a</span><span class="err">；</span>
+<span class="err">　　</span><span class="k">if</span><span class="o">(</span><span class="n">个位和十位的数字都为0</span><span class="o">){</span>
+<span class="err">　　　　</span><span class="n">停止执行当前迭代</span><span class="err">，</span><span class="n">退回到循环起始处</span><span class="err">，</span><span class="n">开始下一次循环</span><span class="err">；</span>
 <span class="err">　　</span><span class="o">}</span>
-<span class="err">　　</span><span class="k">for</span><span class="o">(</span><span class="n">j</span><span class="err">从</span><span class="mi">1</span><span class="err">到</span><span class="mi">3</span><span class="err">循环</span><span class="o">){</span>
-<span class="err">　　　　</span><span class="k">for</span><span class="o">(</span><span class="n">k</span><span class="err">从</span><span class="mi">1</span><span class="err">到</span><span class="mi">3</span><span class="err">循环</span><span class="o">){</span>
-<span class="err">　　　　　　</span><span class="k">if</span><span class="o">(</span><span class="n">k</span><span class="err">不等于</span><span class="n">j</span><span class="o">){</span>
-<span class="err">　　　　　　　　从数组中取出相应的两位数字，计算乘积；</span>
-<span class="err">　　　　　　　　</span><span class="k">if</span><span class="o">(</span><span class="err">乘积等于四位数</span><span class="n">i</span><span class="o">){</span>
-<span class="err">　　　　　　　　　　打印吸血鬼数；</span>
+<span class="err">　　</span><span class="k">for</span><span class="o">(</span><span class="n">j从1到3循环</span><span class="o">){</span>
+<span class="err">　　　　</span><span class="k">for</span><span class="o">(</span><span class="n">k从1到3循环</span><span class="o">){</span>
+<span class="err">　　　　　　</span><span class="k">if</span><span class="o">(</span><span class="n">k不等于j</span><span class="o">){</span>
+<span class="err">　　　　　　　　</span><span class="n">从数组中取出相应的两位数字</span><span class="err">，</span><span class="n">计算乘积</span><span class="err">；</span>
+<span class="err">　　　　　　　　</span><span class="k">if</span><span class="o">(</span><span class="n">乘积等于四位数i</span><span class="o">){</span>
+<span class="err">　　　　　　　　　　</span><span class="n">打印吸血鬼数</span><span class="err">；</span>
 <span class="err">　　　　　　　　</span><span class="o">}</span>
-<span class="err">　　　　　　　　将这个两位数的个位和十位转换位置，计算乘积；</span>
-<span class="err">　　　　　　　　</span><span class="k">if</span><span class="o">(</span><span class="err">乘积等于四位数</span><span class="n">i</span><span class="o">){</span>
-<span class="err">　　　　　　　　　　打印吸血鬼数；</span>
+<span class="err">　　　　　　　　</span><span class="n">将这个两位数的个位和十位转换位置</span><span class="err">，</span><span class="n">计算乘积</span><span class="err">；</span>
+<span class="err">　　　　　　　　</span><span class="k">if</span><span class="o">(</span><span class="n">乘积等于四位数i</span><span class="o">){</span>
+<span class="err">　　　　　　　　　　</span><span class="n">打印吸血鬼数</span><span class="err">；</span>
 <span class="err">　　　　　　　　</span><span class="o">}</span>
 <span class="err">　　　　　　</span><span class="o">}</span>
 <span class="err">　　　　</span><span class="o">}</span>
@@ -116,7 +116,7 @@
 40
 41
 42
-</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="n">operator</span><span class="o">;</span>
+</pre></td><td class="rouge-code"><pre><span class="kn">package</span> <span class="nn">operator</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">VimpireFigures</span> <span class="o">{</span>
 <span class="err">　　</span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
 <span class="err">　　　　</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"四位数的吸血鬼数："</span><span class="o">);</span>

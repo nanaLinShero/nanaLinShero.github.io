@@ -1,0 +1,35 @@
+I"<	<h2 id="css规范">CSS规范</h2>
+<p>CSS遵循可读性强，便于维护的原则</p>
+<h3 id="代码规范">代码规范</h3>
+<h4 id="样式表编码">样式表编码!</h4>
+<p>样式文件必须写上 @charset 规则，并且一定要在样式文件的第一行首个字符位置开始写，编码名用 “UTF-8”。</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">@charset</span> <span class="s1">"UTF-8"</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h4 id="代码风格">代码风格</h4>
+<h5 id="代码格式化">代码格式化</h5>
+<p>样式书写一般有两种：一种是紧凑格式 (Compact)， 一种是展开格式（Expanded），统一使用展开格式书写样式</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c">/* 紧凑 */</span>
+<span class="nc">.nav</span><span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span><span class="nl">width</span><span class="p">:</span> <span class="m">50px</span><span class="p">;}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c">/* 展开 */</span>
+<span class="nc">.nav</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h5 id="代码大小写-tsap">代码大小写-tsap</h5>
+<p>样式选择器，属性名，属性值关键字全部使用小写字母书写，并使用“-”连接。
+``` css
+/* 不推荐 */
+.navList{
+	DISPLAY:BLOCK;
+}</p>
+:ET

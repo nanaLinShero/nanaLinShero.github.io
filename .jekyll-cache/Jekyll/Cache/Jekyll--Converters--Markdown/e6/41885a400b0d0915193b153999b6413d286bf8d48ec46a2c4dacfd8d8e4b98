@@ -1,0 +1,38 @@
+I"	<h1 id="需求背景">需求背景</h1>
+<p>根据数据生成打印页，打印页包含二维码、表格、页码、图片等，其中数据是不固定的。</p>
+<h1 id="流程">流程</h1>
+<p>调用js的打印方法，打印当前的vue页面，后关闭页面。</p>
+<h1 id="遇到的问题">遇到的问题</h1>
+<p>由于浏览器对打印css和js的支持度不同，开发中遇到以下问题：</p>
+<ul>
+  <li>连接打印机</li>
+  <li>局部打印</li>
+  <li>js打印方法不生效</li>
+  <li>背景色不生效</li>
+  <li>element表格在打印中样式错乱</li>
+  <li>如何根据字符串生成二维码</li>
+  <li>页码如何自定义
+    <h1 id="解决方法">解决方法</h1>
+    <ol>
+      <li>连接打印机<br />
+远程连接，通过连接和打印机相同的wifi，不同型号的机器，可能连接方式不同，需要自行百度。<br />
+实际连接到打印机的wifi后，就已经建立和打印机的连接，然后就可以断开该网络，连接其他网络，在打印时，会自动连接打印机。</li>
+      <li>局部打印 <br />
+调研后的方案来看，可以用插件hiprint、prince，但实际使用下来，插件要用josn的方式写样式等问题，还是采用打开页面，打印当前页面后关闭页面的方式。</li>
+      <li>js打印方法<br />
+js执行打印的方法有以下两种：
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">print</span><span class="p">();</span>  <span class="c1">// 可行打印当前页</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="dl">'</span><span class="s1">print</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 唤起打印机，但没有生成预览页，放弃该方法但使用</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>背景色不生效<br />
+打印预览时，背景颜色不生效，可添加以下样式：</li>
+    </ol>
+  </li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+:ET

@@ -1,0 +1,185 @@
+I"v*<h1 id="需求背景">需求背景</h1>
+<p>根据数据生成打印页，打印页包含二维码、表格、页码、图片等，其中数据是不固定的。</p>
+<h1 id="流程">流程</h1>
+<p>调用js的打印方法，打印当前的vue页面，后关闭页面。</p>
+<h1 id="遇到的问题">遇到的问题</h1>
+<p>由于浏览器对打印css和js的支持度不同，开发中遇到以下问题：</p>
+<ul>
+  <li>连接打印机</li>
+  <li>局部打印</li>
+  <li>js打印方法不生效</li>
+  <li>背景色不生效</li>
+  <li>生成多余空白页</li>
+  <li>横向打印</li>
+  <li>element表格在打印中样式错乱
+    <ul>
+      <li>表格超长，部分内容未被打印</li>
+      <li>表格边框粗细不均</li>
+      <li>表格边框颜色不统一</li>
+    </ul>
+  </li>
+  <li>如何根据字符串生成二维码</li>
+  <li>纸张边距和页眉页脚</li>
+  <li>页码如何自定义
+    <h1 id="解决方法">解决方法</h1>
+    <ol>
+      <li>连接打印机<br />
+远程连接，通过连接和打印机相同的wifi，不同型号的机器，可能连接方式不同，需要自行百度。<br />
+实际连接到打印机的wifi后，就已经建立和打印机的连接，然后就可以断开该网络，连接其他网络，在打印时，会自动连接打印机。</li>
+      <li>局部打印 <br />
+调研后的方案来看，可以用插件hiprint、prince，但实际使用下来，插件要用josn的方式写样式等问题，还是采用打开页面，打印当前页面后关闭页面的方式。</li>
+      <li>js打印方法<br />
+js执行打印的方法有以下两种：
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">print</span><span class="p">();</span>  <span class="c1">// 可行打印当前页</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">execCommand</span><span class="p">(</span><span class="dl">'</span><span class="s1">print</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// 唤起打印机，但没有生成预览页，放弃该方法但使用</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>背景色不生效<br />
+打印预览时，背景颜色不生效，可添加以下样式：
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">-webkit-print-color-adjust</span><span class="p">:</span> <span class="n">exact</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.table</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="cp">!important</span><span class="p">;</span>  <span class="err">//</span> <span class="err">一定要加上!important，背景色才会生效</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>生成多余空白页
+打印时发现会生成多余的空白页面，主要是因为body中的高度设置为百分百，可以打印媒体查询解决
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+  <span class="nt">body</span> <span class="p">{</span>
+   <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>  <span class="err">//</span> <span class="err">通用样式设置了高度为100%，会造成打印出不必要的空白页</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>横向打印<br />
+设置打印@page的size属性，即可
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+  <span class="k">@page</span> <span class="p">{</span>
+   <span class="nl">size</span><span class="p">:</span> <span class="n">A4</span> <span class="nb">landscape</span><span class="p">;</span>  <span class="err">//</span> <span class="err">纸张大小为A4，landscape方向为横向；默认方向portrait是纵向；除了这种方式，还可以用英寸等单位设置纸张大小。</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>element表格在打印中样式错乱
+表格用的是element组件，会造成打印的一些问题，其实可以重写，但lazy。。。</li>
+    </ol>
+    <ol>
+      <li>表格超长，部分内容未被打印
+ 表格设置了最小宽度，在table在浏览器是会自动缩放的，可在打印时，是不会缩放的，且超出部分不打印，这个可通过设置宽度调整，说白了，就是凑宽度到合适的A4纸位置
+ ``` html
+ <!-- 设置合适的width --></li>
+    </ol>
+    <dm-table-column fixed="" type="index" label="序号" width="50"></dm-table-column>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre> 2. 表格边框粗细不均
+ 粗细不均的问题，是因为element表格的表头和表身是两个独立的表格合并而成，所以需要设置边框合并，且要去掉第一个表格的底边框或第二个表格的顶边框。
+ ``` css
+  table {
+      border-collapse: collapse;  // 合并边框
+      border: 1px solid black;
+  }
+  .el-table__header {
+      border-bottom: none;  // 表头el-table__header的优先级较高，不想写那么多层级可以直接加上!important
+  }
+</pre></td></tr></tbody></table></code></pre></div>    </div>
+    <ol>
+      <li>表格边框颜色不统一
+ 因为element中写了伪类元素，实际是伪类元素的背景色制造的边框，修改其背景色即可
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>  <span class="nc">.el-table__fixed-right</span><span class="nd">:before</span><span class="o">,</span> <span class="nc">.el-table__fixed</span><span class="nd">:before</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>出现空白行
+ 在print媒体查询中，给td\th设置padding会出现空白行，将该设置去掉即可。
+        <ol>
+          <li>如何根据字符串生成二维码    <br />
+插件<a href="http://hiprint.io">hiprint</a>，可以生成二维码，具体使用方法见下文。 <br />
+后端生成二维码图片，建议说服后端传图片，生成二维码是真滴麻烦。</li>
+          <li>纸张边距和页眉页脚
+浏览器打印时会自动生成页眉页脚，默认的纸张边距，可通过@page设置
+            <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+  <span class="k">@page</span> <span class="p">{</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="err">//</span> <span class="err">去除页眉</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="err">//</span> <span class="err">去除页脚</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">1cm</span><span class="p">;</span> <span class="err">//</span> <span class="err">纸张边距为1cm</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>            </div>
+          </li>
+          <li>页码如何自定义
+理论上，可通过如下代码实现：
+            <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">@media</span> <span class="n">print</span> <span class="p">{</span>
+  <span class="k">@page</span> <span class="p">{</span>
+   <span class="c">/* 页脚中间显示格式如 "第 1 页，共2页" 的页码 */</span>
+  <span class="k">@bottom-center</span> <span class="p">{</span>
+<span class="py">ontent</span><span class="p">:</span> <span class="s1">"第"</span> <span class="n">counter</span><span class="p">(</span><span class="n">page</span><span class="p">)</span> <span class="s1">"页，共"</span><span class="n">counter</span><span class="p">(</span><span class="n">pages</span><span class="p">)</span><span class="s1">"页"</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>            </div>
+            <p>实际上，该样式在浏览器中的支持度不高，无法实现，所以，解决不了问题，就解决提问题的人叭。。。</p>
+            <h1 id="打印插件">打印插件</h1>
+            <h2 id="hiprint">hiprint</h2>
+            <p>在vue中引入hiprint，加载资源且要导入模块</p>
+            <h3 id="引入hiprint">引入hiprint</h3>
+            <h3 id="导入模块">导入模块</h3>
+            <h3 id="实际使用">实际使用</h3>
+            <h2 id="prince">prince</h2>
+            <p>将html转为pdf</p>
+            <h1 id="参考">参考</h1>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+:ET

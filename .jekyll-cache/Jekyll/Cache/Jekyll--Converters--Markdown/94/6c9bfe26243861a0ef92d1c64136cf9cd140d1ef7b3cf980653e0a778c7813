@@ -1,0 +1,210 @@
+I"]<blockquote>
+  <p>本文首发于我的掘金文章 <a href="https://juejin.im/post/6886343456839761933">Wap端自适应和在微信中调整字体大小的问题总结</a>，转载请保留链接 ;)</p>
+</blockquote>
+
+<h2 id="基本字体单位">基本字体单位</h2>
+
+<p>常用的基本字体单位有：px, em，rem, vw，vh</p>
+
+<h3 id="px">px</h3>
+
+<p>绝对单位，页面按精确像素展示</p>
+
+<h3 id="em">em</h3>
+
+<p>相对单位，基准点为父节点的字体大小。
+<em>用例：文字的首行缩进2个字符</em></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;p</span> <span class="na">sytle=</span><span class="s">"text-index:2em"</span><span class="nt">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p>注意：<br />
+如果自身定义了font-size按照自身来计算<br />
+浏览器默认字体大小是16px</p>
+</blockquote>
+
+<h3 id="rem">rem</h3>
+
+<p>相对单位，相对根节点html的字体大小来计算，css3新加属性。</p>
+<ul>
+  <li>方案1：简单常用版本
+以页面基准1080px为例;html font-size值的计算：</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">doc</span><span class="p">,</span> <span class="nx">win</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">htmlFont</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">docEl</span> <span class="o">=</span> <span class="nx">doc</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">,</span>
+<span class="nx">view</span> <span class="o">=</span> <span class="nx">docEl</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">,</span>
+<span class="nx">height</span> <span class="o">=</span> <span class="nx">docEl</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">,</span>
+<span class="nx">font</span><span class="p">;</span>
+<span class="nx">docEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">minHeight</span> <span class="o">=</span> <span class="nx">height</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">px</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">font</span> <span class="o">=</span> <span class="nx">view</span> <span class="o">/</span> <span class="mf">10.8</span><span class="p">;</span>
+<span class="nx">view</span> <span class="o">&gt;</span> <span class="mi">1080</span> <span class="p">?</span> <span class="nx">docEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">px</span><span class="dl">"</span> <span class="p">:</span> <span class="nx">docEl</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="nx">font</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">px</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">htmlFont</span><span class="p">();</span>
+<span class="nx">win</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">resize</span><span class="dl">"</span><span class="p">,</span> <span class="nx">htmlFont</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+<span class="p">})(</span><span class="nb">document</span><span class="p">,</span> <span class="nb">window</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>方案2：高清方案</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="o">!</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="kd">function</span> <span class="nx">t</span><span class="p">(</span><span class="nx">a</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="nx">i</span><span class="p">[</span><span class="nx">a</span><span class="p">])</span><span class="k">return</span> <span class="nx">i</span><span class="p">[</span><span class="nx">a</span><span class="p">].</span><span class="nx">exports</span><span class="p">;</span><span class="kd">var</span> <span class="nx">n</span><span class="o">=</span><span class="nx">i</span><span class="p">[</span><span class="nx">a</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="na">exports</span><span class="p">:{},</span><span class="na">id</span><span class="p">:</span><span class="nx">a</span><span class="p">,</span><span class="na">loaded</span><span class="p">:</span><span class="o">!</span><span class="mi">1</span><span class="p">};</span><span class="k">return</span> <span class="nx">e</span><span class="p">[</span><span class="nx">a</span><span class="p">].</span><span class="nx">call</span><span class="p">(</span><span class="nx">n</span><span class="p">.</span><span class="nx">exports</span><span class="p">,</span><span class="nx">n</span><span class="p">,</span><span class="nx">n</span><span class="p">.</span><span class="nx">exports</span><span class="p">,</span><span class="nx">t</span><span class="p">),</span><span class="nx">n</span><span class="p">.</span><span class="nx">loaded</span><span class="o">=!</span><span class="mi">0</span><span class="p">,</span><span class="nx">n</span><span class="p">.</span><span class="nx">exports</span><span class="p">}</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="p">{};</span><span class="k">return</span> <span class="nx">t</span><span class="p">.</span><span class="nx">m</span><span class="o">=</span><span class="nx">e</span><span class="p">,</span><span class="nx">t</span><span class="p">.</span><span class="nx">c</span><span class="o">=</span><span class="nx">i</span><span class="p">,</span><span class="nx">t</span><span class="p">.</span><span class="nx">p</span><span class="o">=</span><span class="dl">""</span><span class="p">,</span><span class="nx">t</span><span class="p">(</span><span class="mi">0</span><span class="p">)}([</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">t</span><span class="p">){</span><span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span><span class="dl">"</span><span class="s2">__esModule</span><span class="dl">"</span><span class="p">,{</span><span class="na">value</span><span class="p">:</span><span class="o">!</span><span class="mi">0</span><span class="p">});</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="nb">window</span><span class="p">;</span><span class="nx">t</span><span class="p">[</span><span class="dl">"</span><span class="s2">default</span><span class="dl">"</span><span class="p">]</span><span class="o">=</span><span class="nx">i</span><span class="p">.</span><span class="nx">flex</span><span class="o">=</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">t</span><span class="p">){</span><span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="nx">e</span><span class="o">||</span><span class="mi">100</span><span class="p">,</span><span class="nx">n</span><span class="o">=</span><span class="nx">t</span><span class="o">||</span><span class="mi">1</span><span class="p">,</span><span class="nx">r</span><span class="o">=</span><span class="nx">i</span><span class="p">.</span><span class="nb">document</span><span class="p">,</span><span class="nx">o</span><span class="o">=</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">,</span><span class="nx">d</span><span class="o">=</span><span class="nx">o</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Android</span><span class="se">[\S\s]</span><span class="sr">+AppleWebkit</span><span class="se">\/(\d{3})</span><span class="sr">/i</span><span class="p">),</span><span class="nx">l</span><span class="o">=</span><span class="nx">o</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/U3</span><span class="se">\/((\d</span><span class="sr">+|</span><span class="se">\.){5,})</span><span class="sr">/i</span><span class="p">),</span><span class="nx">c</span><span class="o">=</span><span class="nx">l</span><span class="o">&amp;&amp;</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">l</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">.</span><span class="dl">"</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="dl">""</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">,</span><span class="nx">p</span><span class="o">=</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">appVersion</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/</span><span class="se">(</span><span class="sr">iphone|ipad|ipod</span><span class="se">)</span><span class="sr">/gi</span><span class="p">),</span><span class="nx">s</span><span class="o">=</span><span class="nx">i</span><span class="p">.</span><span class="nx">devicePixelRatio</span><span class="o">||</span><span class="mi">1</span><span class="p">;</span><span class="nx">p</span><span class="o">||</span><span class="nx">d</span><span class="o">&amp;&amp;</span><span class="nx">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">534</span><span class="o">||</span><span class="nx">c</span><span class="o">||</span><span class="p">(</span><span class="nx">s</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span><span class="kd">var</span> <span class="nx">u</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="nx">s</span><span class="p">,</span><span class="nx">m</span><span class="o">=</span><span class="nx">r</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">meta[name="viewport"]</span><span class="dl">'</span><span class="p">);</span><span class="nx">m</span><span class="o">||</span><span class="p">(</span><span class="nx">m</span><span class="o">=</span><span class="nx">r</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">meta</span><span class="dl">"</span><span class="p">),</span><span class="nx">m</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">viewport</span><span class="dl">"</span><span class="p">),</span><span class="nx">r</span><span class="p">.</span><span class="nx">head</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">m</span><span class="p">)),</span><span class="nx">m</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">content</span><span class="dl">"</span><span class="p">,</span><span class="dl">"</span><span class="s2">width=device-width,user-scalable=no,initial-scale=</span><span class="dl">"</span><span class="o">+</span><span class="nx">u</span><span class="o">+</span><span class="dl">"</span><span class="s2">,maximum-scale=</span><span class="dl">"</span><span class="o">+</span><span class="nx">u</span><span class="o">+</span><span class="dl">"</span><span class="s2">,minimum-scale=</span><span class="dl">"</span><span class="o">+</span><span class="nx">u</span><span class="p">),</span><span class="nx">r</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span><span class="o">=</span><span class="nx">a</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="nx">s</span><span class="o">*</span><span class="nx">n</span><span class="o">+</span><span class="dl">"</span><span class="s2">px</span><span class="dl">"</span><span class="p">},</span><span class="nx">e</span><span class="p">.</span><span class="nx">exports</span><span class="o">=</span><span class="nx">t</span><span class="p">[</span><span class="dl">"</span><span class="s2">default</span><span class="dl">"</span><span class="p">]}]);</span> <span class="nx">flex</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>优点：<br />
+根据设备屏幕的DPR,自动设置最合适的高清缩放。
+保证了不同设备下视觉体验的一致性。（上个方案是，屏幕越大元素越大；此方案是，屏幕越大，看的越多）<br />
+缺点：<br />
+因为屏幕越大，看的越多，所以在示例网站上，不能做到在所有的分辨率上都保持一致的样式
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e4a546fdc2e1408fb03fa2eba2fdf074~tplv-k3u1fbpfcp-watermark.image" alt="" />
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/88d79c5d596a42a1858ee3e0504ed1a3~tplv-k3u1fbpfcp-watermark.image" alt="" /></p>
+<blockquote>
+  <p>上述方案的样式根据设计稿测量的数据，除以100，加上rem，即1rem=100px</p>
+</blockquote>
+
+<h3 id="vwvh">vw，vh</h3>
+
+<p>vw：视窗宽度，1vw等于视窗宽度的1%。<br />
+<em>常用于wap端适配屏幕宽度</em><br />
+vh：视窗高度，1vh等于视窗高度的1%。<br />
+<em>常用于pc端的全屏展示</em></p>
+
+<h2 id="微信调整字体">微信调整字体</h2>
+
+<ol>
+  <li>原理<br />
+手机在系统设置和微信设置的通用设置中都提供放大字体功能，这两种设置都可以系统中字体和应用中字体的大小。<br />
+改变font-size，不仅仅是根元素的font-size，所有font-size都会受到影响</li>
+  <li>解决方案
+    <ul>
+      <li>禁止调整浏览器字体大小行为</li>
+    </ul>
+    <ul>
+      <li>
+        <p>iOS系统<br />
+   body设置-webkit-text-size-adjust属性禁止调整字体大小</p>
+
+        <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>   <span class="nt">body</span> <span class="p">{</span>
+     <span class="nl">-webkit-text-size-adjust</span><span class="p">:</span> <span class="m">100%</span> <span class="cp">!important</span><span class="p">;</span>
+     <span class="py">text-size-adjust</span><span class="p">:</span> <span class="m">100%</span> <span class="cp">!important</span><span class="p">;</span>
+     <span class="nl">-moz-text-size-adjust</span><span class="p">:</span> <span class="m">100%</span> <span class="cp">!important</span><span class="p">;</span>
+   <span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Android系统 <br />
+ 调整浏览器字体是通过改变字体大小,所以可以考虑将字体大小在设置的时候进行等比例缩小。
+ 例如，一个文字希望以10px来进行渲染，当浏览器字体被放大两倍时，此时font-size会变为20px。 <br />
+ 因此我们可以在取到这个放大比例之后，对原样式进行等比缩小，比如将原文字大小设置为5px，渲染的时候就变成了10px。 <br />
+ <strong>做这种处理时注意页面中使用rem为单位。</strong></p>
+
+        <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre> <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+ <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+ <span class="kd">var</span> <span class="nx">$dom</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">div</span><span class="dl">'</span><span class="p">);</span>
+ <span class="nx">$dom</span><span class="p">.</span><span class="nx">style</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">font-size:10px;</span><span class="dl">'</span><span class="p">;</span>
+ <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">$dom</span><span class="p">);</span>
+ <span class="c1">// 计算出放大后的字体</span>
+ <span class="kd">var</span> <span class="nx">scaledFontSize</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">$dom</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="dl">'</span><span class="s1">font-size</span><span class="dl">'</span><span class="p">));</span>
+ <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">$dom</span><span class="p">);</span>
+ <span class="c1">// 计算原字体和放大后字体的比例</span>
+ <span class="kd">var</span> <span class="nx">scaleFactor</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="nx">scaledFontSize</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">originRootFontSize</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="dl">'</span><span class="s1">font-size</span><span class="dl">'</span><span class="p">));</span>
+ <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="nx">originRootFontSize</span> <span class="o">*</span> <span class="nx">scaleFactor</span> <span class="o">*</span> <span class="nx">scaleFactor</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">px</span><span class="dl">'</span><span class="p">;</span>
+ <span class="p">})();</span>
+ <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></pre></td></tr></tbody></table></code></pre></div>        </div>
+
+        <blockquote>
+          <p>注意：如果页面中使用了rem为单位，改变根元素的font-size</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>优点:<br />
+(1)这种方式可以完全还原页面原本的布局样式。<br />
+(2)实现简单，只需在页面上加一段css,一段JavaScript。</p>
+
+<p>缺点：<br />
+(1)因为通过代码执行完成可能造成页面闪烁，这个问题可以通过提前执行这段代码或者做加载完成前页面暂时不展示解决。<br />
+(2)这种方式对那些真正需要放大浏览器字体的用户并不友好。</p>
+
+<ul>
+  <li>改变布局适应适应这种调整浏览器字体大小行为
+优点：<br />
+(1) 不许额外执行JavaScript代码。<br />
+(2)用户可以选择调整浏览器字体,对于有这种需求的用户友好，目前像京东淘宝的移动web端都是使用这种方式。<br />
+缺点：<br />
+(1) 即使通过改变布局该应对变化，但是还是会出现布局错位的情况。<br />
+(2) 实现起来较为复杂，需要在开发时一直考虑这个问题。
+    <blockquote>
+      <p>注意：如果样式都用的rem计算，那么，每次重置时用js使得根元素的字体大小不变。</p>
+    </blockquote>
+  </li>
+</ul>
+
+<ol>
+  <li>px是否受到影响<br />
+对于元素宽高来说，因为rem是根据根元素的font-size来计算的，如果不使用rem计算宽高，那么只要不使用rem，图片的宽高将不受影响。<br />
+对于字体来说，只要设置了font-size，使用px一样会影响到字体大小。</li>
+  <li>实际中的解决办法
+    <blockquote>
+      <p>示例：在手机端调整字体之后，头部的图片会挤占位置，造成样式错乱，热区也会定位不准</p>
+    </blockquote>
+  </li>
+</ol>
+
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f3fbdf8583b04902a72969acb2c1ea74~tplv-k3u1fbpfcp-watermark.image" alt="" />
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/48355f0d0938481798f0c033c5f8c499~tplv-k3u1fbpfcp-watermark.image" alt="" /></p>
+
+<p><strong>遇到的问题及解决方案</strong></p>
+<ul>
+  <li>浏览器和微信的缓存无法清除，导致样式修改之后没有效果</li>
+  <li>元素宽高、热区是根据rem计算，如果调整字体大小，那么这些样式和位置都要改变
+解决办法：<br />
+(1)更改样式之后，刷新，清空缓存<br />
+(2)元素宽高依赖于rem，全局修改为vw的工作量大，所以仅将图片宽高做max-限制
+    <blockquote>
+      <p>注意：热区需要重新计算，改用vw计算，不过有个问题需要注意，js的计算精度问题，详见https://wiki.trscd.com.cn/pages/viewpage.action?pageId=38372818</p>
+    </blockquote>
+  </li>
+</ul>
+:ET

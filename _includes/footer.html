@@ -133,6 +133,41 @@
 <!-- Side Catalog -->
 {% if page.catalog %}
 <script type="text/javascript">
+    function dealCatalog(els) {
+        let arr = Array.from(els).map(i => ({
+            id: $(i).prop('id'),
+            tagName: $(i).prop('tagName').toLowerCase(),
+            text: $(i).text()
+        }));
+        return arr.reduce((pre, cur, index) => {
+            if(index) {
+                let prevItem = arr[index - 1], pName = prevItem.tagName, cName = cur.tagName;
+                if(pName === cName) {
+                    if(prevItem.hasOwnProperty('parentIndex')) {
+                        let pIndex = prevItem.parentIndex;
+                        cur.parentIndex = pIndex;
+                        arr[pIndex].hasOwnProperty('child') ? arr[pIndex].child.push(cur) : (arr[pIndex].child = [cur]);
+                    } else {
+                        pre.push(cur);
+                    }
+                } else if(Number(pName[1]) < Number(cName[1])) {
+                    cur.parentIndex = index - 1;
+                    prevItem.child = [cur];
+                } else {
+                    let item = arr.find(i => i.tagName === cur.tagName );
+                    if(item.hasOwnProperty('parentIndex')) {
+                        arr[item.parentIndex].child.push(cur);
+                    } else {
+                        pre.push(cur);
+                    }
+                }
+            } else {
+                pre.push(cur);
+            }
+            return pre;
+        }, [])
+    }
+
     function generateCatalog (selector) {
 
         // interop with multilangual 
@@ -150,15 +185,39 @@
         $(selector).html('')
 
         // appending
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#"+$(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
-            l = $('<li class="'+n+'_nav"></li>').append(c);
-            $(selector).append(l);
-        });
+        // a.each(function () {
+        //     n = $(this).prop('tagName').toLowerCase();
+        //     i = "#"+$(this).prop('id');
+        //     t = $(this).text();
+        //     c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+        //     l = $('<li class="'+n+'_nav"></li>').append(c);
+        //     $(selector).append(l);
+        // });
+
+        a = dealCatalog(P.find('h1,h2,h3,h4,h5,h6'));
+        a.forEach(i => {
+            $(selector).append(creatElement(i));
+        })
+
         return true;
+    }
+
+    function creatElement(el) {
+        if(el.child && el.child.length) {
+            let icon = $('<i class="icon"></i>');
+            let c = $('<a href="#'+el.id+'" rel="nofollow">'+el.text+'</a>');
+            let l = $('<li class="'+el.tagName+'_nav p_nav"></li>').append(icon).append(c);
+            let u = $('<ul class="cata-list"></ul>');
+            el.child.forEach(li => {
+                u.append(creatElement(li));
+            })
+            l.append(u);
+            return l;
+        } else {
+            let c = $('<a href="#'+el.id+'" rel="nofollow">'+el.text+'</a>');
+            let l = $('<li class="'+el.tagName+'_nav"></li>').append(c);
+            return l;
+        }
     }
 
     generateCatalog(".catalog-body");
@@ -167,6 +226,11 @@
     $(".catalog-toggle").click((function(e){
         e.preventDefault();
         $('.side-catalog').toggleClass("fold")
+    }))
+
+    $(".p_nav .icon").click((function(e){
+        e.preventDefault();
+        $(this).toggleClass("fold")
     }))
 
     /*

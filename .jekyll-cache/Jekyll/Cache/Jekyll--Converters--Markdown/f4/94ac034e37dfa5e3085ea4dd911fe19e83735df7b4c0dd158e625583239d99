@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"<blockquote>
   <p>Your time is limited, so don’t waste it living someone else’s life.</p>
 </blockquote>
 
@@ -29,38 +29,38 @@
   <tbody>
     <tr>
       <td>😅</td>
-      <td><code class="highlighter-rouge">PHP</code> <code class="highlighter-rouge">BASIC</code></td>
-      <td><code class="highlighter-rouge">C</code> <code class="highlighter-rouge">ObjC</code> <code class="highlighter-rouge">Prolog</code></td>
-      <td><code class="highlighter-rouge">Kotlin</code> <code class="highlighter-rouge">Dart</code> <code class="highlighter-rouge">Asm</code></td>
-      <td><code class="highlighter-rouge">Swift</code> <code class="highlighter-rouge">Agda</code> <code class="highlighter-rouge">Idris</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PHP</code> <code class="language-plaintext highlighter-rouge">BASIC</code></td>
+      <td><code class="language-plaintext highlighter-rouge">C</code> <code class="language-plaintext highlighter-rouge">ObjC</code> <code class="language-plaintext highlighter-rouge">Prolog</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Kotlin</code> <code class="language-plaintext highlighter-rouge">Dart</code> <code class="language-plaintext highlighter-rouge">Asm</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Swift</code> <code class="language-plaintext highlighter-rouge">Agda</code> <code class="language-plaintext highlighter-rouge">Idris</code></td>
     </tr>
     <tr>
       <td>🧐</td>
       <td> </td>
-      <td><code class="highlighter-rouge">C++</code> <code class="highlighter-rouge">Hack</code> <code class="highlighter-rouge">Lisp*</code></td>
-      <td><code class="highlighter-rouge">C++11</code> <code class="highlighter-rouge">C#</code> <code class="highlighter-rouge">AS3</code></td>
-      <td><code class="highlighter-rouge">Scala</code> <code class="highlighter-rouge">Rust</code></td>
+      <td><code class="language-plaintext highlighter-rouge">C++</code> <code class="language-plaintext highlighter-rouge">Hack</code> <code class="language-plaintext highlighter-rouge">Lisp*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">C++11</code> <code class="language-plaintext highlighter-rouge">C#</code> <code class="language-plaintext highlighter-rouge">AS3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Scala</code> <code class="language-plaintext highlighter-rouge">Rust</code></td>
     </tr>
     <tr>
       <td>😏</td>
-      <td><code class="highlighter-rouge">Shell</code></td>
-      <td><code class="highlighter-rouge">Java</code> <code class="highlighter-rouge">Python</code></td>
-      <td><code class="highlighter-rouge">TypeScript</code> <code class="highlighter-rouge">Flow</code> <code class="highlighter-rouge">Wasm</code></td>
-      <td><code class="highlighter-rouge">Haskell</code> <code class="highlighter-rouge">Coq</code> <code class="highlighter-rouge">ML*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Shell</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Java</code> <code class="language-plaintext highlighter-rouge">Python</code></td>
+      <td><code class="language-plaintext highlighter-rouge">TypeScript</code> <code class="language-plaintext highlighter-rouge">Flow</code> <code class="language-plaintext highlighter-rouge">Wasm</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Haskell</code> <code class="language-plaintext highlighter-rouge">Coq</code> <code class="language-plaintext highlighter-rouge">ML*</code></td>
     </tr>
     <tr>
       <td>🤓</td>
       <td> </td>
-      <td><code class="highlighter-rouge">JavaScript</code></td>
-      <td><code class="highlighter-rouge">EcmaScript6</code></td>
-      <td><code class="highlighter-rouge">λ</code> <code class="highlighter-rouge">Λ</code> <code class="highlighter-rouge">Π</code> <code class="highlighter-rouge">Σ</code></td>
+      <td><code class="language-plaintext highlighter-rouge">JavaScript</code></td>
+      <td><code class="language-plaintext highlighter-rouge">EcmaScript6</code></td>
+      <td><code class="language-plaintext highlighter-rouge">λ</code> <code class="language-plaintext highlighter-rouge">Λ</code> <code class="language-plaintext highlighter-rouge">Π</code> <code class="language-plaintext highlighter-rouge">Σ</code></td>
     </tr>
   </tbody>
 </table>
 
 <blockquote>
-  <p><strong><code class="highlighter-rouge">ML*</code></strong>: <code class="highlighter-rouge">OCaml</code> <code class="highlighter-rouge">ReasonML</code> <code class="highlighter-rouge">Standard ML</code><br />
-<strong><code class="highlighter-rouge">Lisp*</code></strong>: <code class="highlighter-rouge">Clojure</code> <code class="highlighter-rouge">Scheme</code> <code class="highlighter-rouge">Racket</code></p>
+  <p><strong><code class="language-plaintext highlighter-rouge">ML*</code></strong>: <code class="language-plaintext highlighter-rouge">OCaml</code> <code class="language-plaintext highlighter-rouge">ReasonML</code> <code class="language-plaintext highlighter-rouge">Standard ML</code><br />
+<strong><code class="language-plaintext highlighter-rouge">Lisp*</code></strong>: <code class="language-plaintext highlighter-rouge">Clojure</code> <code class="language-plaintext highlighter-rouge">Scheme</code> <code class="language-plaintext highlighter-rouge">Racket</code></p>
 </blockquote>
 
 <h5 id="talks">Talks</h5>
