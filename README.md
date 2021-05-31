@@ -15,8 +15,17 @@
 git fork  
 稍后更新
 # 环境
-jekyll安装与配置  
-稍后更新
+[jekyll](http://jekyllcn.com/)安装与配置  
+[mac系统👇](https://nanalinshero.github.io/2020/10/27/mac-install-jekyll/)
+# 运行
+运行并监听本地改变
+``` 
+jekyll server watch 
+```
+运行预览草稿
+``` 
+jekyll server --drafts 
+```
 # 基础配置
 图片、个人信息等的配置  
 稍后更新

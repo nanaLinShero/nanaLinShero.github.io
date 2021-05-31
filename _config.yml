@@ -1,7 +1,7 @@
 # Site settings
 title: nanaLin Blog
 SEOTitle: nanaLin Blog
-header-img: img/banner.jpg
+header-img: img/home-banner.jpg
 email: huxpro@gmail.com
 description: "关于前端开发与设计 | 林娜，Web & Mobile Lover，Software Engineer| 这里是 @Ln林娜 的个人博客，与你一起发现更大的世界。"
 keyword: "林娜, Ln林娜, Ln, 林娜的博客, nanaLin Blog, 博客, 个人网站, 互联网, Web, JavaScript, 前端, 设计"
@@ -24,8 +24,9 @@ github_username:    nanaLinShero
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+# 输出
 highlighter: rouge
-permalink: pretty
+permalink: /:title   # 博客链接设置
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
@@ -78,7 +79,7 @@ ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Doing the things I want to do"
+sidebar-about-description: "纸上得来终觉浅，绝知此事要躬行"
 sidebar-avatar: /img/avatar-nana.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

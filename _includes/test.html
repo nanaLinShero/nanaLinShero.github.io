@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 测试树结构 -->
     <script>
         let elements = [
             {
@@ -39,9 +40,10 @@
                 name: 'h1'
             },
         ]
-        let groups = mapArr(elements)
+        let groups = createElements(elements)
+        console.log(JSON.stringify(groups))
         console.log(groups)
-        function mapArr(arr) {
+        function createElements(arr) {
             arr = Array.from(arr);
             return arr.reduce((pre, cur, index) => {
                 if(index) {

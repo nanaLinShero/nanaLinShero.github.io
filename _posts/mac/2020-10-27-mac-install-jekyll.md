@@ -3,6 +3,8 @@ title: "macOS 安装jekyll"
 subtitle: "安装流程和踩坑"
 layout: post
 author: "Lin.na"
+date: 2020-10-27 12:00
+template-variables: none
 header-style: text
 catalog:    true
 tags:
