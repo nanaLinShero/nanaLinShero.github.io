@@ -5,6 +5,7 @@ layout: post
 author: "Lin.na"
 header-img: "img/post-bg-re-vs-ng2.jpg"
 header-mask: 0.3
+categories: java
 catalog:    true
 tags:
   - Java

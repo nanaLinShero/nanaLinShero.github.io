@@ -4,6 +4,7 @@ subtitle: "保姆级教程，手把手教会使用"
 layout: post
 author: "Lin.na"
 header-style: text
+categories: css3
 catalog:    true
 tags:
   - CSS

@@ -6,6 +6,7 @@ author: "Lin.na"
 date: 2020-10-27 12:00
 template-variables: none
 header-style: text
+categories: mac
 catalog:    true
 tags:
   - mac
