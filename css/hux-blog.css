@@ -1,3 +1,8 @@
+/*!
+ * Hux Blog v1.8.2 (http://nanaLinSerho.github.io)
+ * Copyright 2021 Hux <huxpro@gmail.com>
+ */
+
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
@@ -26,14 +31,14 @@
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-  color: #0085a1 !important;
+  color: #ffb6b9 !important;
 }
 .sidebar-container .tags a {
   border-color: #bfbfbf;
 }
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
-  border-color: #0085a1;
+  border-color: #ffb6b9;
 }
 .sidebar-container .short-about img {
   width: 80%;
@@ -622,7 +627,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #0085a1;
+  color: #ffb6b9;
 }
 a img:hover,
 a img:focus {
@@ -707,7 +712,7 @@ samp {
 }
 .post-container a:hover,
 .post-container a:focus {
-  color: #0085a1;
+  color: #ffb6b9;
 }
 .post-container h1,
 .post-container h2,
@@ -971,14 +976,14 @@ samp {
 }
 .navbar-custom.invert .navbar-brand:hover,
 .navbar-custom.invert .navbar-brand:focus {
-  color: #0085a1;
+  color: #ffb6b9;
 }
 .navbar-custom.invert .nav li a {
   color: #404040;
 }
 .navbar-custom.invert .nav li a:hover,
 .navbar-custom.invert .nav li a:focus {
-  color: #0085a1;
+  color: #ffb6b9;
 }
 @media only screen and (min-width: 1170px) {
   .navbar-custom {
@@ -1009,14 +1014,14 @@ samp {
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085a1;
+    color: #ffb6b9;
   }
   .navbar-custom.is-fixed .nav li a {
     color: #404040;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #0085a1;
+    color: #ffb6b9;
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -1186,7 +1191,7 @@ samp {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #0085a1;
+  color: #ffb6b9;
 }
 .post-preview > a > .post-title {
   font-size: 21px;
@@ -1214,7 +1219,7 @@ samp {
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
-  color: #0085a1;
+  color: #ffb6b9;
   text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
@@ -1236,7 +1241,7 @@ samp {
   color: #a3a3a3;
 }
 .post-content-preview:hover {
-  color: #0085a1;
+  color: #ffb6b9;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
@@ -1276,7 +1281,7 @@ footer .copyright a {
 }
 footer .copyright a:hover,
 footer .copyright a:focus {
-  color: #0085a1;
+  color: #ffb6b9;
 }
 .floating-label-form-group {
   font-size: 14px;
@@ -1323,7 +1328,7 @@ footer .copyright a:focus {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: #0085a1;
+  color: #ffb6b9;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
@@ -1348,8 +1353,8 @@ form .row:first-child .floating-label-form-group {
 }
 .btn-default:hover,
 .btn-default:focus {
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #ffb6b9;
+  border: 1px solid #ffb6b9;
   color: white;
 }
 .pager {
@@ -1385,8 +1390,8 @@ form .row:first-child .floating-label-form-group {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #ffb6b9;
+  border: 1px solid #ffb6b9;
 }
 .pager li > a:hover > span,
 .pager li > a:focus > span {
@@ -1403,12 +1408,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #ffb6b9;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #ffb6b9;
 }
 img::selection {
   color: white;

@@ -20,7 +20,7 @@ git fork
 # 运行
 运行并监听本地改变
 ``` 
-jekyll server watch 
+jekyll server --watch 
 ```
 运行预览草稿
 ``` 
@@ -33,4 +33,10 @@ jekyll server --drafts
 1. 侧边栏导航
 2. 修改样式  
 3. grunt  
+通过Gruntfile.js来配置打包信息  
+```
+grunt less #less预编译
+grunt uglify #js编译
+
+```
 稍后更新
