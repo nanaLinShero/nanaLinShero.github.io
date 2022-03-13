@@ -8,6 +8,7 @@ categories: css3
 catalog:    true
 tags:
   - CSS
+  - 动画
 ---
 
 > 本文首发于我的博客园博客 [css3关键帧动画实现轮播效果](https://www.cnblogs.com/CodeShero/p/7265855.html)，转载请保留链接 ;)
